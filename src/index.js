@@ -2,6 +2,7 @@
 import database from '../database.json'
 import Person from './person.js'
 import TerminalController from './terminalController.js'
+import { save } from './repository.js'
 
 const DEFAULT_LANG = "pt-br"
 const STOP_TERM = ":q"
@@ -15,10 +16,12 @@ async function mainLoop() {
         if (answer === STOP_TERM) return terminalController.closeTerminal()
 
         const person = Person.generateInstanceFromSring(answer)
-        console.log(person.formatted(DEFAULT_LANG))
+        terminalController.updateTable(person.formatted(DEFAULT_LANG))
+
+        await save(person)
        return mainLoop()
     } catch (error) {
-        console.error('DEU RUIM', e)
+        console.error('DEU RUIM', error)
         return mainLoop()
     }
 }
