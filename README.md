@@ -1,163 +1,98 @@
-[ghpagesurl]: https://training-erickwendel.github.io/jsexpert-challenge-guide/
-[studentreview]: https://github.com/ThaSMorato/jsexpert-exercicio01-pokeapi/issues/1
-[studentreview2]: https://github.com/ThaSMorato/jsexpert-challenge03-terminal/issues/1
+# Story: Entendendo conceitos fundamentais do ciclo de vida do Javascript
 
-<!--- Challenge 01 stuff -->
+A idéia é implementar códigos pensando no comportamento do Javascript com base no `JS Expect - Módulo 03`, que trata de `Conceitos fundamentais sobre o ciclo de vida do Javascript`. 
 
-[module01]: https://javascriptexpert.club.hotmart.com/lesson/K4k013YkeY/introducao-ao-capitulo
-[challenge01]: https://github.com/training-erickwendel/jsexpert-exercicio01-pokeapi
-[solution01]: https://github.com/training-erickwendel/jsexpert-exercicio01-pokeapi-solution
+Baseando-se nos testes automatizados já criados neste repo - similares aos feitos no [Desafio Anterior](https://github.com/training-erickwendel/jsexpert-exercicio01-pokeapi) -, implemente o código em cada uma das services existentes.
 
-<!--- Challenge 02 stuff -->
+## Funcionalidades
 
-[module02]: https://javascriptexpert.club.hotmart.com/lesson/3eaYRg5Beg/introducao-ao-capitulo
-[challenge02]: https://github.com/training-erickwendel/jsexpert-challenge02-lifecycle
-[solution02]: https://github.com/training-erickwendel/jsexpert-challenge02-lifecycle-solution
+### Requisitos
+1. Implemente os métodos marcados com um `//@TODO: comment`  em cada uma das respectivas services,
+na ordem que preferir:
 
-<!--- Challenge 03 stuff -->
+* [ ] _services/StatementsService_
+* [ ] _services/WeirdMathService_
+* [ ] _services/ReferencesService_
+* [ ] _services/ObjectMethodsService_
 
-[module03]: https://javascriptexpert.club.hotmart.com/lesson/ROxErPLB4D/introducao-ao-capitulo
-[challenge03]: https://github.com/training-erickwendel/jsexpert-challenge03-terminal
-[solution03]: https://github.com/training-erickwendel/jsexpert-challenge03-terminal-solution
+> Nota: Para saber quais os comportamentos esperados de cada método, verifique os testes unitários de cada service.
 
-<!--- Challenge 04 stuff -->
+2. Remova os `//@TODO: comments` de cada função implementada, e garanta que os testes referentes à essa função estejam funcionando.
 
-[module04]: https://javascriptexpert.club.hotmart.com/lesson/gOpYqkXb4J/introducao-ao-capitulo
-[challenge04]: https://github.com/training-erickwendel/jsexpert-challenge04-datatypes
-[solution04]: https://github.com/training-erickwendel/jsexpert-challenge04-datatypes-solution
+> Nota: Não são necessárias alterações nos testes. Eles já estão prontos e servem de guia durante a execução do desafio
 
-<!--- Challenge 05 stuff -->
+### Testes
 
-[module05]: https://javascriptexpert.club.hotmart.com/lesson/0Ovkkq1N4j/introducao-ao-capitulo
-[challenge05]: https://github.com/training-erickwendel/jsexpert-challenge05-regexp
-[solution05]: https://github.com/training-erickwendel/jsexpert-challenge05-regexp-solution
+Você saberá que o desafio está concluído quando executar o comando `npm run test` e todos os testes passarem. O resultado deve ser algo parecido com isso:
 
-<!--- Challenge 06 stuff -->
+![image](https://user-images.githubusercontent.com/41883467/144168298-cd15a97d-0c04-49e0-94cd-aadfabd2554b.png)
 
-<!-- [module06]: https://javascriptexpert.club.hotmart.com/lesson/0Ovkkq1N4j/introducao-ao-capitulo
-[challenge06]: https://github.com/training-erickwendel/jsexpert-challenge05-regexp
-[solution06]: https://github.com/training-erickwendel/jsexpert-challenge05-regexp-solution -->
+### Extras
 
-# Guia de DESAFIOS JS EXPERT
+* [ ] Desafio opcional: Note que no arquivo `test/unit/service/ReferencesService.test`, existe um teste na linha 44 com um `it.skip()`. Esse é um desafio opcional, e caso queira implementá-lo é só remover o `.skip` e implementar a respectiva função que está sendo testada na ReferencesService
 
-Bem-vindo(a) ao guia rápido de acompanhamento e resolução dos DESAFIOS JS EXPERT!
+## Dicas
 
-> Dica do Wells: Caso você esteja lendo o README.md no GitHub, saiba que tem uma visualização bem mais bonita desse readme usando o github pages logo aqui: [VISUALIZAR O GUIA NO GITHUB PAGES][ghpagesurl]
+Sinta-se livre pra desenvolver sua solução da melhor maneira possível, e caso já queira uma dica sobre como organizar as idéias, aqui vai:
 
-## Acompanhamento
+- Lembre que cada `@TODO: comment` tem uma dica sobre como resolver o problema
+- Fique atento ao comportamento esperado do método nos testes
+- Não esqueça de conferir as aulas do curso denovo para fixar mais ainda os conhecimentos
+- Caso queira executar _apenas 1 teste por vez_ para manter o terminal sempre limpo e fácil de trabalhar, você pode ir no teste ou na suite de testes que deseja focar e usar um `.only`. (ex.: `describe.only(...`, `it.only(...`)
 
-<!--
-> ⚠️ Importante: Finalize o [Desafio 05][challenge05] até _28/04/2022_ para ter acesso ao **Code Review Personalizado**!
--->
+### Arquitetura e onde trabalhar
 
-Aqui você tem acesso à lista atualizada de desafios e algumas dicas de qual módulo estudar.
+```
+project
+│   README.md
+│   package.json
+│
+└───src
+│   │  
+│   └───service
+│       │   ObjectMethodsService.js     // EDIT HERE !
+│       │   ReferencesService.js        // EDIT HERE !
+│       │   StatementsService.js        // EDIT HERE !
+│       │   WeirdMathService.js         // EDIT HERE !
+│   
+└───test
+│   │  
+│   └───unit/service
+│       │   ObjectMethodsService.js     // DO *NOT* EDIT HERE !
+│       │   ReferencesService.js        // DO *NOT* EDIT HERE !
+│       │   StatementsService.js        // DO *NOT* EDIT HERE !
+│       │   WeirdMathService.js         // DO *NOT* EDIT HERE !
+│         
+```
 
-> Dica do Wells: Sinta-se livre pra criar um `fork` desse repositório e ir marcando os _checkbox_ abaixo! ;)
+### Checklist features
 
-- [ ] [DESAFIO JS EXPERT 01 - PokeAPI][challenge01]:
-      Crie uma API que retorna times pokemón consumindo a PokeAPI com o objetivo de aplicar conceitos de **testes unitários** e de **integração** usando **mocks**, **stubs**, **spies** e mais. **100% de code coverage é o mínimo!**
-  - **O que estudar:** [_Módulo 02 - Javascript Testing_][module01];
-  - **Solução oficial:** [DESAFIO JS EXPERT 01 - PokeAPI - Solution][solution01].
+- ObjectMethodsService
+  * [ ] Deve entender Coerção de tipos e Objects Lifecycle e implementar soluções usando `valueOf`, `toString` e `[Symbol.toPrimitive]`.
 
----
+- ReferencesService
+  * [ ] Deve entender tipos de referência e Mutability vs Immutability, e implementar soluções copiando ou não referências de objetos.
 
-- [ ] [DESAFIO JS EXPERT 02 - Lifecycle][challenge02]:
-      Aplique conceitos do ciclo de vida do Javascript para fazer os testes passarem, prevendo todo tipo de **comportamento maluco** e **coerções internas da linguagem**!
-  - **O que estudar:** [_Módulo 03 - Conceitos fundamentais sobre o ciclo de vida do Javascript Parte 01_][module02];
-  - **Solução oficial:** [DESAFIO JS EXPERT 02 - Lifecycle - Solution][solution02].
+- StatementsService
+  * [ ] Deve entender o uso de conditional statements no Javascript e seus respectivos retornos em diferentes cenários.
 
----
+- WeirdMathService
+  * [ ] Deve entender o fluxo de vida do Javascript e as coerções implícitas que ocorrem em expressões matemáticas.
 
-- [ ] [DESAFIO JS EXPERT 03 - Terminal][challenge03]:
-      Descubra sua pretensão salarial em moedas estrangeiras usando **internacionalização** e conceitos de **construção de CLIs** - de quebra, claro, usando um pouco de **ECMAScript modules**!
-  - **O que estudar:** [_Módulo 04 - Conceitos fundamentais sobre o ciclo de vida do Javascript Parte 02_][module03];
-  - **Solução oficial:** [DESAFIO JS EXPERT 03 - Terminal - Solution][solution03].
+## Submissão
 
----
+1. Crie um fork deste repositório e modifique o README.md inserindo o seu nome no início do arquivo.
 
-- [ ] [DESAFIO JS EXPERT 04 - DataTypes][challenge04]:
-      Implemente uma _Producer/Consumer Application_ para criar um sistema de recomendação manual de criptomoedas usando **estruturas Javascript tão sênior** que os exemplos em aula vêm diretamente do **código fonte do NodeJS\***!
-  - **O que estudar:** [_Módulo 05 - Advanced Javascript Data Types_][module04];
-  - **Solução oficial:** [DESAFIO JS EXPERT 04 - DataTypes - Solution][solution04].
+2. Instale as dependências usando `npm i` e garanta que os testes rodam normalmente com `npm run dev`
 
----
+> Nota: Como a idéia é que você implemente os códigos a fim de fazer os testes passarem, a princípio todos os testes estarão quebrando, então não se assuste. :) 
 
-- [ ] [DESAFIO JS EXPERT 05 - RegExp][challenge05]:
-      Implemente uma aplicação baseada em _Facade/Fluent API_ para criar um sistema de mineração de dados Legislativos usando **Expressões Regulares** e **TDD na prática**!
-  - **O que estudar:** [_Módulo 06 - Expressões Regulares - RegExp_][module05];
-  - **Solução oficial:** [DESAFIO JS EXPERT 05 - RegExp - Solution][solution05].
+3. Implemente cada uma das funções marcadas com um `//@TODO: comment` (e não se esqueça de remover esses comentários uma vez que concluir a implementação)
 
----
+4. Garanta que todos os testes estejam rodando e, caso queira, conclua o desafio opcional mencionado acima. 
 
-<!--
-- [ ] [DESAFIO JS EXPERT 06 - ???????][challenge06]:
-      Implemente uma aplicação baseada em _Facade/Fluent API_ para criar um sistema de mineração de dados Legislativos usando **Expressões Regulares** e **TDD na prática**!
-  - **O que estudar:** [_Módulo 07 - Expressões Regulares - RegExp_][module06];
-  - **Solução oficial:** _liberação em breve_.
+5. Envie o link no canal `#desafios-jsexpert` da nossa comunidade no discord.
 
---- -->
+## Até quando?
 
-## Ajuda
-
-### 1. O que são os desafios?
-
-Os Desafios JS Expert são desafios de código elaborados para te ajudar a fixar o conteúdo visto em aula de maneira dinâmica e - adivinha só - desafiadora!
-
-Ou, nas palavras do **Community Manager** da **EW.IT**:
-
-> "A idéia é que cada desafio seja um projeto desafiador o suficiente para os alunos fixarem o conteúdo das aulas, mas guiado o suficiente para eles saberem o que fazer e onde procurar! - WellsSA.
-
-### 2. O que estudar para resolver cada desafio?
-
-A princípio **cada desafio é diretamente atrelado a um módulo do treinamento JS Expert**, que é informado dentro do próprio README do desafio.
-
-Então você pode focar em aplicar as estruturas e conceitos vistos em aula num ambiente controlado usando o próprio código visto em aula em conjunto com o código base fornecido no próprio desafio para fixar essas estruturas e começar a arquiteturar casos de uso que de fato usem o que você está aprendendo!
-
-### 3. O que eu ganho fazendo os desafios?
-
-- **Fixe o conteúdo na prática**
-
-  Antes de tudo o mais clichê e importante: o aprendizado! Que é majoritariamente um dos pontos mais importantes de todo o treinamento.
-
-- **Ganhe levels como um `@Challenger`!**
-
-  Na nossa comunidade do discord, pode reparar que existem os `@Challengers`, alunos que completaram os desafios anteriores. **Cada desafio concluído no prazo equivale a 1 level up** na comunidade, então quanto maior o nível do `@Challenger`, mais desafios ele fez!
-
-- **Interação com a equipe da EW.IT**
-
-  Periodicamente diferentes partes da EW.IT interagem com os `@Challengers` para trocar uma idéia, organizar lives, entender um pouco mais do momento profissional deles e de como está sendo o feedback dos desafios no geral; além de termos o contato mais próximo devido aos **Code reviews personalizados** (mais detalhes sobre isso a seguir).
-
-- **Interação com a comunidade**
-
-  Sinta-se livre para mandar mensagens no canal pedindo ajuda ou ajudando os demais alunos, assim como conferir a solução dos seus colegas em tempo real e fazer boas amizades, além, claro, de poder pedir ajuda para os próprios organizadores dos desafios (Wells e Erick).
-
-- **Code review de especialistas**
-
-  Quando um desafio é liberado, ele tem um prazo (mencionado no README do próprio desafio). Concluindo o desafio dentro do prazo estipulado, você tem o direito a um code review feito diretamente pelo Community Manager da EW.IT, ressaltando seus pontos fortes e possíveis pontos de melhoria, como os exemplos a seguir de um dos nossos primeiros challengers:
-
-  - [ThaSMorato - Correção do Desafio 01 - PokeAPI][studentreview]
-  - [ThaSMorato - Correção do Desafio 03 - Terminal][studentreview2]
-
-### 4. Como eu submeto um desafio?
-
-Após escolher um desafio para fazer, crie um `fork` do repositório do desafio no github, faça a sua implementação e mande o link do seu projeto lá no nosso canal `#-desafios-jsexpert` na nossa comunidade do discord!
-
-Para ter o code review personalizado a submissão precisa ser dentro do prazo proposto, mas caso você faça o desafio fora do prazo pode mandar lá também que nós ficamos felizes e você mostra o seu empenho! 🚀
-
-**🚨 IMPORTANTE:** pra a correção e o feedback personalizado, garanta que o seu repositório no GitHub **permite a criação de issues**
-
-> Dica do Wells: Na página do próprio repo mesmo lá no GitHub é só **marcar o checkbox de issues** em `Settings > Features`. o/
-
-### 5. Como obter ajuda?
-
-Todo o ciclo de vida dos desafios acontece lá no discord, majoritariamente no canal `#-desafios-jsexpert`, então pode ficar a vontade para:
-
-- Mandar suas dúvidas lá no canal, já ajudando inclusive outras pessoas que poderiam ter essa dúvida no futuro!
-- Mandar mensagens ao nosso Community Manager `@WellsSA` - que por sinal é quem cria os desafios, então dicas importantes podem surgir.
-- Ou até mesmo contatar os `@Challengers`, que com certeza terão bastante propriedade pra ajudar lá no discord também!
-
-### 6. Por onde eu começo?
-
-Cada desafio **funciona individualmente** e é atrelado a um módulo, então caso queira começar a partir do desafio mais recente para ter as correções no prazo ou mesmo começar do desafio de algum módulo que mais tenha te chamado atenção, fique à vontade pra fazer na ordem que desejar, com o tempo que tiver disponível! 😄
-
-> Dica do Wells: Vale lembrar que mesmo os desafios sendo individuais, eles vão progredindo conforme o curso progride também, então resolver eles gradualmente e em ordem conforme você acompanha o curso pode ser uma boa pedida, até pra você sentir como foi a evolução do processo de criação desses desafios com o passar do tempo. :)
+Se você está pegando esse desafio na estréia, corre lá e envia pra gente até *Quarta-feira, 15 de dezembro de 2021 (15/12/2021)*!
