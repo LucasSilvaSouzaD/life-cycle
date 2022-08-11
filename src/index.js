@@ -21,7 +21,7 @@ async function mainLoop() {
         await save(person)
        return mainLoop()
     } catch (error) {
-        console.error('DEU RUIM', error)
+        console.error('dados inseridos incorretos, tente novamente...')
         return mainLoop()
     }
 }
