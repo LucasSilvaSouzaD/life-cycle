@@ -6,14 +6,14 @@ const generateInstanceFromStringTest = () => {
     )
 
     const expected = {
-        id: '1', 
+        id: '1',
         vehicles: ['Bike', 'Moto'],
         kmTraveled: '30000',
         from: '2000-01-01',
         to: '2002-01-01'
     }
 
-    return isEquals(person, expected) ? console.log("Passing: generateInstanceFromStringTest") : console.log("Failing: generateInstanceFromStringTest")
+    return isEquals(person, expected) ? console.log("passing: √ generateInstanceFromStringTest") : console.log("failing: generateInstanceFromStringTest")
 }
 
 const personFormattedTest = () => {
@@ -34,7 +34,7 @@ const personFormattedTest = () => {
         from: '01 de janeiro de 2000',
         to: '01 de janeiro de 2002'
     }
-    return isEquals(result, expected) ? console.log("Passing: personFormattedTest") : console.log("Failing: personFormattedTest")
+    return isEquals(result, expected) ? console.log("passing: √ personFormattedTest") : console.log("failing: personFormattedTest")
     
 }
 
@@ -47,7 +47,9 @@ const isEquals = (resultObject, expectedObject) => {
 
     if (!checkProperties) return false
 
-    return JSON.stringify(resultObject) === JSON.stringify(expectedObject)
+    const checkObjects = JSON.stringify(resultObject) === JSON.stringify(expectedObject)
+    
+    return checkObjects
 }
 
 ;

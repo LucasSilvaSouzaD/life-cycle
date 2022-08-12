@@ -1,4 +1,4 @@
-export default class Person {
+"use strict";module.export({default:()=>Person});class Person {
     constructor({ id, vehicles, kmTraveled, from, to}) {
         this.id = id
         this.vehicles = vehicles
@@ -30,7 +30,7 @@ export default class Person {
         }
     }
 
-    static generateInstanceFromString(text) {
+    static generateInstanceFromSring(text) {
         const EMPTY_SPACE = ' '
         const [id, vehicles, kmTraveled, from, to] = text.split(EMPTY_SPACE)
 

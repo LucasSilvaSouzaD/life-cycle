@@ -15,13 +15,13 @@ async function mainLoop() {
         const answer = await terminalController.question()
         if (answer === STOP_TERM) return terminalController.closeTerminal()
 
-        const person = Person.generateInstanceFromSring(answer)
+        const person = Person.generateInstanceFromString(answer)
         terminalController.updateTable(person.formatted(DEFAULT_LANG))
 
         await save(person)
        return mainLoop()
     } catch (error) {
-        console.error('dados inseridos incorretos, tente novamente...')
+        console.error('dados inseridos incorretos, tente novamente...', error)
         return mainLoop()
     }
 }
