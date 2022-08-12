@@ -1,20 +1,19 @@
 import Person from '../src/person.js'
 
-
 const generateInstanceFromStringTest = () => {
-    const person = Person.generateInstanceFromSring(
+    const person = Person.generateInstanceFromString(
         '1 Bike,Moto 30000 2000-01-01 2002-01-01'
     )
 
     const expected = {
-        id: '1',
+        id: '1', 
         vehicles: ['Bike', 'Moto'],
         kmTraveled: '30000',
         from: '2000-01-01',
         to: '2002-01-01'
     }
 
-    return isEquivalent(person, expected) ? console.log("Passing: generateInstanceFromStringTest") : console.log("Failing: generateInstanceFromStringTest")
+    return isEquals(person, expected) ? console.log("Passing: generateInstanceFromStringTest") : console.log("Failing: generateInstanceFromStringTest")
 }
 
 const personFormattedTest = () => {

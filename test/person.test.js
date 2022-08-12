@@ -7,7 +7,7 @@ import Person from '../src/person.js'
 
 describe("Person", () => {
     it('should return a person instance from a string', () => {
-        const person = Person.generateInstanceFromSring(
+        const person = Person.generateInstanceFromString(
             '1 Bike,Moto 30000 2000-01-01 2002-01-01'
         )
 
