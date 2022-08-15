@@ -13,7 +13,7 @@ const generateInstanceFromStringTest = () => {
         to: '2002-01-01'
     }
 
-    return isEquals(person, expected) ? console.log("passing: √ generateInstanceFromStringTest") : console.log("failing: generateInstanceFromStringTest")
+    return isEquals(person, expected) ? console.log("passing: 😁 generateInstanceFromStringTest") : console.log("failing: 🤬 generateInstanceFromStringTest")
 }
 
 const personFormattedTest = () => {
@@ -34,22 +34,22 @@ const personFormattedTest = () => {
         from: '01 de janeiro de 2000',
         to: '01 de janeiro de 2002'
     }
-    return isEquals(result, expected) ? console.log("passing: √ personFormattedTest") : console.log("failing: personFormattedTest")
-    
+
+    return isEquals(result, expected) ? console.log("passing: 😁 personFormattedTest") : console.log("failing: 🤬 personFormattedTest")
 }
 
 const isEquals = (resultObject, expectedObject) => {
 
-    const result = Object.getOwnPropertyNames(resultObject);
-    const expected = Object.getOwnPropertyNames(expectedObject);
+    const result = Object.keys(resultObject)
+    const expected = Object.keys(expectedObject)
 
-    const checkProperties = (result.length == expected.length) && result.every((element, index) => element === expected[index]);
+    const wrongValue = expected.filter(item => {
+        if (!result.includes(item)) return item
+        if (resultObject[item].toString() !== expectedObject[item].toString()) return item
+    })
 
-    if (!checkProperties) return false
+    return wrongValue.length > 0 ? false : true
 
-    const checkObjects = JSON.stringify(resultObject) === JSON.stringify(expectedObject)
-    
-    return checkObjects
 }
 
 ;
