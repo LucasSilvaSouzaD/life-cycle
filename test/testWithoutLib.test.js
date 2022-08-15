@@ -42,9 +42,10 @@ const isEquals = (resultObject, expectedObject) => {
 
     const result = Object.keys(resultObject)
     const expected = Object.keys(expectedObject)
-
     const wrongValue = expected.filter(item => {
+        // propriedade
         if (!result.includes(item)) return item
+        // objeto
         if (resultObject[item].toString() !== expectedObject[item].toString()) return item
     })
 

@@ -34,7 +34,7 @@ export default class terminalController {
         this.print(chalkTable(this.getTableOptions(), this.data))
     }
 
-    question(msg = '') {
+    question(msg = 'Digite as informações separados por espaço: ') {
         return new Promise(resolve => this.terminal.question(msg, resolve))
     }
 
