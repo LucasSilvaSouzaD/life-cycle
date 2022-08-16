@@ -1,4 +1,4 @@
-export default class Person {
+export default class UserReport {
     constructor({ id, vehicles, kmTraveled, from, to}) {
         this.id = id
         this.vehicles = vehicles
@@ -34,7 +34,7 @@ export default class Person {
         const EMPTY_SPACE = ' '
         const [id, vehicles, kmTraveled, from, to] = text.split(EMPTY_SPACE)
 
-        const person = new Person({
+        const report = new UserReport({
             id,
             kmTraveled,
             from,
@@ -42,7 +42,7 @@ export default class Person {
             vehicles: vehicles.split(',')
         })
 
-        return person
+        return report
 
     }
 }

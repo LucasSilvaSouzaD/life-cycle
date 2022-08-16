@@ -1,7 +1,7 @@
-import Person from '../src/person.js'
+import UserReport from '../src/userReport.js'
 
 const generateInstanceFromStringTest = () => {
-    const person = Person.generateInstanceFromString(
+    const report = UserReport.generateInstanceFromString(
         '1 Bike,Moto 30000 2000-01-01 2002-01-01'
     )
 
@@ -13,11 +13,11 @@ const generateInstanceFromStringTest = () => {
         to: '2002-01-01'
     }
 
-    return isEquals(person, expected) ? console.log("passing: 😁 generateInstanceFromStringTest") : console.log("failing: 🤬 generateInstanceFromStringTest")
+    return isEquals(report, expected) ? console.log("passing: 😁 generateInstanceFromStringTest") : console.log("failing: 🤬 generateInstanceFromStringTest")
 }
 
 const personFormattedTest = () => {
-    const person = new Person({
+    const report = new UserReport({
         id: '1',
         vehicles: ['Bike', 'Moto'],
         kmTraveled: '30000',
@@ -25,7 +25,7 @@ const personFormattedTest = () => {
         to: '2002-01-01'
     })
 
-    const result = person.formatted("pt-br")
+    const result = report.formatted("pt-br")
 
     const expected = {
         id: 1,

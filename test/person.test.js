@@ -2,12 +2,12 @@ import mocha from 'mocha'
 const { describe, it } = mocha
 import chai from 'chai'
 const { expect } = chai
-import Person from '../src/person.js'
+import UserReport from '../src/userReport.js'
 
 
 describe("Person", () => {
     it('should return a person instance from a string', () => {
-        const person = Person.generateInstanceFromString(
+        const person = UserReport.generateInstanceFromString(
             '1 Bike,Moto 30000 2000-01-01 2002-01-01'
         )
 
@@ -23,7 +23,7 @@ describe("Person", () => {
     })
 
     it('should return value', () => {
-        const person = new Person({
+        const person = new UserReport({
             from: '2000-01-01',
             to: '2002-01-01',
             vehicles: ['Bike', 'Moto'],

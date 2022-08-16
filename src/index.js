@@ -1,6 +1,6 @@
 
 import database from '../database.json'
-import Person from './person.js'
+import UserReport from './userReport.js'
 import TerminalController from './terminalController.js'
 import { save } from './repository.js'
 
@@ -15,10 +15,10 @@ async function mainLoop() {
         const answer = await terminalController.question()
         if (answer === STOP_TERM) return terminalController.closeTerminal()
 
-        const person = Person.generateInstanceFromString(answer)
-        terminalController.updateTable(person.formatted(DEFAULT_LANG))
+        const report = UserReport.generateInstanceFromString(answer)
+        terminalController.updateTable(report.formatted(DEFAULT_LANG))
 
-        await save(person)
+        await save(report)
        return mainLoop()
     } catch (error) {
         console.error('dados inseridos incorretos, tente novamente...', error)
