@@ -3,6 +3,7 @@ import DraftLog from 'draftlog'
 import chalk from 'chalk'
 import chalkTable from 'chalk-table'
 import UserReport from './userReport.js'
+import formatted from './util/formatted.js'
 
 
 export default class terminalController {
@@ -22,7 +23,7 @@ export default class terminalController {
     }
 
     initializeTables(database, language) {
-        const data = database.map(item => new UserReport(item).formatted(language))
+        const data = database.map(item => formatted(language, new UserReport(item)))
         const table = chalkTable(this.getTableOptions(), data)
 
         this.print = console.draft(table)

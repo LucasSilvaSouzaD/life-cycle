@@ -3,6 +3,7 @@ import database from '../database.json'
 import UserReport from './userReport.js'
 import TerminalController from './terminalController.js'
 import { save } from './repository.js'
+import formatted from './util/formatted.js'
 
 const DEFAULT_LANG = "pt-br"
 const STOP_TERM = ":q"
@@ -16,9 +17,10 @@ async function mainLoop() {
         if (answer === STOP_TERM) return terminalController.closeTerminal()
 
         const report = UserReport.generateInstanceFromString(answer)
-        terminalController.updateTable(report.formatted(DEFAULT_LANG))
+        terminalController.updateTable(formatted(DEFAULT_LANG, report))
 
         await save(report)
+        
        return mainLoop()
     } catch (error) {
         console.error('dados inseridos incorretos, tente novamente...', error)
