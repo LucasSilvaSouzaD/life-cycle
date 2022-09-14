@@ -1,6 +1,6 @@
 
 import database from '../database.json'
-import UserReport from './userReport.js'
+import CustomerRentReport from './customerRentReport.js'
 import TerminalController from './terminalController.js'
 import { save } from './repository.js'
 import formatted from './util/formatted.js'
@@ -16,7 +16,8 @@ async function mainLoop() {
         const answer = await terminalController.question()
         if (answer === STOP_TERM) return terminalController.closeTerminal()
 
-        const report = UserReport.generateInstanceFromString(answer)
+        const report = CustomerRentReport.generateInstanceFromString(answer)
+        
         terminalController.updateTable(formatted(DEFAULT_LANG, report))
 
         await save(report)
