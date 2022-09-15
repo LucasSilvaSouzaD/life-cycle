@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "npx nodemon --ignore database.json --exec node --experimental-json-modules --experimental-top-level-await src/index.js",
+    "concurrence": "npx nodemon --ignore database.json --exec node --experimental-json-modules --experimental-top-level-await src/server/concurrence.js",
+    "dev": "npx nodemon --ignore database.json --exec node --experimental-json-modules --experimental-top-level-await src/server/index.js",
     "test": "npx mocha -w --parallel test/*.test.js",
     "test:cov": "npx nyc npx mocha -r reify --parallel test/*.test.js"
   },
@@ -18,6 +19,7 @@
     "draftlog": "^1.0.13"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.5.0",
     "chai": "^4.3.6",
     "mocha": "^8.4.0",
     "nyc": "^15.1.0",

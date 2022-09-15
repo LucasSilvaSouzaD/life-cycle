@@ -1,12 +1,13 @@
-import UserReport from '../src/userReport.js'
+import CustomerRentReport from '../src/CustomerRentReport.js'
+import formatted from '../src/util/formatted.js'
 
 const generateInstanceFromStringTest = () => {
-    const report = UserReport.generateInstanceFromString(
-        '1 Bike,Moto 30000 2000-01-01 2002-01-01'
+    const report = CustomerRentReport.generateInstanceFromString(
+        'Bike,Moto 30000 2000-01-01 2002-01-01'
     )
+    delete report.id
 
     const expected = {
-        id: '1',
         vehicles: ['Bike', 'Moto'],
         kmTraveled: '30000',
         from: '2000-01-01',
@@ -17,18 +18,16 @@ const generateInstanceFromStringTest = () => {
 }
 
 const personFormattedTest = () => {
-    const report = new UserReport({
-        id: '1',
+    const report = new CustomerRentReport({
         vehicles: ['Bike', 'Moto'],
         kmTraveled: '30000',
         from: '2000-01-01',
         to: '2002-01-01'
     })
 
-    const result = report.formatted("pt-br")
-
+    const result = formatted("pt-br", report)
+    delete result.id
     const expected = {
-        id: 1,
         vehicles: 'Bike e Moto',
         kmTraveled: '30.000 km',
         from: '01 de janeiro de 2000',

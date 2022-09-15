@@ -9,4 +9,6 @@ export const save = async (data) => {
     currentData.push(data)
 
     await writeFile(filepath, JSON.stringify(currentData))
+
+    return currentData
 }

@@ -1,12 +1,16 @@
 
-import database from '../database.json'
-import CustomerRentReport from './customerRentReport.js'
-import TerminalController from './terminalController.js'
-import { save } from './repository.js'
-import formatted from './util/formatted.js'
+import database from '../../database.json'
+
+import CustomerRentReport from '../customerRentReport.js'
+import TerminalController from '../terminalController.js'
+
+import { save } from '../repository.js'
+
+import formatted from '../util/formatted.js'
 
 const DEFAULT_LANG = "pt-br"
 const STOP_TERM = ":q"
+
 
 const terminalController = new TerminalController()
 terminalController.initializeTerminal(database, DEFAULT_LANG)
@@ -18,18 +22,17 @@ async function mainLoop() {
 
         const report = CustomerRentReport.generateInstanceFromString(answer)
         
-        terminalController.updateTable(formatted(DEFAULT_LANG, report))
+        const formattedData = formatted(DEFAULT_LANG, report)
 
-        await save(report)
-        
-       return mainLoop()
+        await save(formattedData).then(data => terminalController.updateTable(data))
+
+       return setTimeout(() => mainLoop(), 10000)
     } catch (error) {
         console.error('dados inseridos incorretos, tente novamente...', error)
-        return mainLoop()
+        return setTimeout(() => mainLoop(), 10000)
     }
 }
 
 await mainLoop()
-
 
 
