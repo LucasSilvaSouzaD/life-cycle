@@ -5,7 +5,6 @@ const { expect } = chai
 import CustomerRentReport from '../src/CustomerRentReport.js'
 import formatted from '../src/util/formatted.js'
 
-
 describe("Person", () => {
     it('should return a person instance from a string', () => {
 

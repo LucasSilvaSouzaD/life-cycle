@@ -10,8 +10,6 @@ import { faker } from '@faker-js/faker';
 import formatted from '../util/formatted.js'
 
 const DEFAULT_LANG = "pt-br"
-const STOP_TERM = ":q"
-
 
 const terminalController = new TerminalController()
 terminalController.initializeTerminal(database, DEFAULT_LANG)
