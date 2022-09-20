@@ -2,7 +2,7 @@ import mocha from 'mocha'
 const { describe, it } = mocha
 import chai from 'chai'
 const { expect } = chai
-import CustomerRentReport from '../src/CustomerRentReport.js'
+import CustomerRentReport from '../src/controller/customerRentReport.js'
 import formatted from '../src/util/formatted.js'
 
 describe("Person", () => {

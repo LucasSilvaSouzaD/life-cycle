@@ -1,10 +1,10 @@
 
 import database from '../../database.json'
 
-import CustomerRentReport from '../customerRentReport.js'
-import TerminalController from '../terminalController.js'
+import CustomerRentReport from '../controller/customerRentReport.js'
+import TerminalController from '../controller/terminalController.js'
 
-import { save } from '../repository.js'
+import { save } from '../util/repository.js'
 
 import formatted from '../util/formatted.js'
 

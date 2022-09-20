@@ -16,17 +16,15 @@ terminalController.initializeTerminal(database, DEFAULT_LANG)
 
 async function mainLoop() {
     try {
-        // const answer = await terminalController.question()
-        // if (answer === STOP_TERM) return terminalController.closeTerminal()
 
-        const object = {
+        const customerRent = {
             car: faker.vehicle.vehicle(),
             kmTraveled: Math.floor(Math.random() * 992183),
             from: "2003-03-03",
             to: "2002-02-02",
         }
 
-        const {car, kmTraveled, from, to} = object
+        const {car, kmTraveled, from, to} = customerRent
         
         const answer = `${car.replace(/\s/g, '')} ${kmTraveled} ${from} ${to}`  
 

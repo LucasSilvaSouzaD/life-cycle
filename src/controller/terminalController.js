@@ -3,7 +3,7 @@ import DraftLog from 'draftlog'
 import chalk from 'chalk'
 import chalkTable from 'chalk-table'
 
-export default class terminalController {
+export default class TerminalController {
     constructor() {
         this.print = {}
         this.data = {}
