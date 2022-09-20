@@ -3,7 +3,7 @@ const { describe, it } = mocha
 import chai from 'chai'
 const { expect } = chai
 import CustomerRentReport from '../src/controller/customerRentReport.js'
-import formatted from '../src/util/formatted.js'
+import formatted from '../src/utils/formatted.js'
 
 describe("Person", () => {
     it('should return a person instance from a string', () => {

@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "concurrence": "npx nodemon --ignore database.json --exec node --experimental-json-modules --experimental-top-level-await src/server/concurrence.js",
+    "auto": "npx nodemon --ignore database.json --exec node --experimental-json-modules --experimental-top-level-await src/server/indexAuto.js",
     "dev": "npx nodemon --ignore database.json --exec node --experimental-json-modules --experimental-top-level-await src/server/index.js",
     "test": "npx mocha -w --parallel test/*.test.js",
     "test:cov": "npx nyc npx mocha -r reify --parallel test/*.test.js"

@@ -1,5 +1,5 @@
-import CustomerRentReport from '../src/CustomerRentReport.js'
-import formatted from '../src/util/formatted.js'
+import CustomerRentReport from '../src/controller/CustomerRentReport.js'
+import formatted from '../src/utils/formatted.js'
 
 const generateInstanceFromStringTest = () => {
     const report = CustomerRentReport.generateInstanceFromString(

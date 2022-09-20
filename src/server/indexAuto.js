@@ -1,13 +1,13 @@
 
 import database from '../../database.json'
 
-import CustomerRentReport from '../customerRentReport.js'
-import TerminalController from '../terminalController.js'
+import CustomerRentReport from '../controller/customerRentReport.js'
+import TerminalController from '../controller/terminalController.js'
 
-import { save } from '../repository.js'
+import { save } from '../utils/repository.js'
 import { faker } from '@faker-js/faker';
 
-import formatted from '../util/formatted.js'
+import formatted from '../utils/formatted.js'
 
 const DEFAULT_LANG = "pt-br"
 
@@ -16,7 +16,6 @@ terminalController.initializeTerminal(database, DEFAULT_LANG)
 
 async function mainLoop() {
     try {
-
         const customerRent = {
             car: faker.vehicle.vehicle(),
             kmTraveled: Math.floor(Math.random() * 992183),
@@ -34,13 +33,11 @@ async function mainLoop() {
 
         await save(formattedData).then(data => terminalController.updateTable(data))
 
-       return setTimeout(() => mainLoop(), 4000)
+       return setTimeout(() => mainLoop(), 7000)
     } catch (error) {
         console.error('dados inseridos incorretos, tente novamente...', error)
-        return setTimeout(() => mainLoop(), 4000)
+        return setTimeout(() => mainLoop(), 7000)
     }
 }
 
 await mainLoop()
-
-

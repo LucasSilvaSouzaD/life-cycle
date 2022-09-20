@@ -4,9 +4,9 @@ import database from '../../database.json'
 import CustomerRentReport from '../controller/customerRentReport.js'
 import TerminalController from '../controller/terminalController.js'
 
-import { save } from '../util/repository.js'
+import { save } from '../utils/repository.js'
 
-import formatted from '../util/formatted.js'
+import formatted from '../utils/formatted.js'
 
 const DEFAULT_LANG = "pt-br"
 const STOP_TERM = ":q"
