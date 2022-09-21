@@ -9,7 +9,7 @@ export default class TerminalController {
         this.data = {}
     }
 
-    initializeTerminal(database, language) {
+    initializeTerminal(database) {
         DraftLog(console).addLineListener(process.stdin)
         this.terminal = readline.createInterface({
             input: process.stdin,
