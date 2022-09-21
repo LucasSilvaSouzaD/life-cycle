@@ -1,8 +1,10 @@
 import CustomerRentReport from '../src/controller/CustomerRentReport.js'
+import generateInstanceFromString from '../src/utils/generateInstanceFromString.js'
+
 import formatted from '../src/utils/formatted.js'
 
 const generateInstanceFromStringTest = () => {
-    const report = CustomerRentReport.generateInstanceFromString(
+    const report = generateInstanceFromString(
         'Bike,Moto 30000 2000-01-01 2002-01-01'
     )
     delete report.id

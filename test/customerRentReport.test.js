@@ -1,14 +1,18 @@
 import mocha from 'mocha'
 const { describe, it } = mocha
+
 import chai from 'chai'
 const { expect } = chai
+
 import CustomerRentReport from '../src/controller/customerRentReport.js'
+import generateInstanceFromString from '../src/utils/generateInstanceFromString.js'
+
 import formatted from '../src/utils/formatted.js'
 
 describe("Person", () => {
     it('should return a person instance from a string', () => {
 
-        const person = CustomerRentReport.generateInstanceFromString(
+        const person = generateInstanceFromString(
             'Bike,Moto 30000 2000-01-01 2002-01-01'
         )
         delete person.id

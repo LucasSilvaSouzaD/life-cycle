@@ -1,8 +1,8 @@
 
 import database from '../../database.json'
 
-import CustomerRentReport from '../controller/customerRentReport.js'
 import TerminalController from '../controller/terminalController.js'
+import generateInstanceFromString from '../utils/generateInstanceFromString.js';
 
 import { save } from '../utils/repository.js'
 import { faker } from '@faker-js/faker';
@@ -27,7 +27,7 @@ async function mainLoop() {
         
         const answer = `${car.replace(/\s/g, '')} ${kmTraveled} ${from} ${to}`  
 
-        const report = CustomerRentReport.generateInstanceFromString(answer)
+        const report = generateInstanceFromString(answer)
         
         const formattedData = formatted(DEFAULT_LANG, report)
 
