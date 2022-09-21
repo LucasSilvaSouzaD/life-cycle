@@ -17,14 +17,14 @@ terminalController.initializeTerminal(database, DEFAULT_LANG)
 async function mainLoop() {
     try {
         const customerRent = {
-            car: faker.vehicle.vehicle(),
+            car: faker.vehicle.vehicle() + ',' + faker.vehicle.vehicle(),
             kmTraveled: Math.floor(Math.random() * 992183),
             from: "2003-03-03",
             to: "2002-02-02",
         }
 
         const {car, kmTraveled, from, to} = customerRent
-        
+  
         const answer = `${car.replace(/\s/g, '')} ${kmTraveled} ${from} ${to}`  
 
         const report = generateInstanceFromString(answer)
