@@ -1,7 +1,7 @@
 
 import database from '../../database.json'
 
-import TerminalController from '../controller/terminalController.js'
+import TerminalController from '../controllers/terminalController.js'
 import generateInstanceFromString from '../utils/generateInstanceFromString.js'
 
 import { save } from '../utils/repository.js'

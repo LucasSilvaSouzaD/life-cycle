@@ -1,4 +1,4 @@
-import CustomerRentReport from "../controller/customerRentReport.js"
+import CustomerRentReport from "../entities/customerRentReport.js"
 
 export default function generateInstanceFromString(text) {
     const EMPTY_SPACE = ' '
